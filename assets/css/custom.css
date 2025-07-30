@@ -1,0 +1,448 @@
+/* 隐藏侧边栏 */
+.sidebar-menu {
+    display: none !important;
+    width: 0 !important;
+}
+
+/* 让主内容区域占据整个宽度，但增加两侧留白 */
+.page-container .main-content {
+    width: 100% !important;
+    padding-left: 95px; /* 增加左侧留白，从80px增加到95px */
+    padding-right: 95px; /* 增加右侧留白，从80px增加到95px */
+    max-width: 1600px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中显示 */
+}
+
+/* 调整顶部导航栏 */
+.navbar.user-info-navbar {
+    width: 100% !important;
+    max-width: 1600px; /* 与内容区域保持一致 */
+    margin: 0 auto; /* 居中显示 */
+    position: relative; /* 为绝对定位的LOGO提供参考 */
+    padding-top: 20px; /* 为更大的LOGO腾出更多空间，从15px增加到20px */
+}
+
+/* 移除侧边栏切换按钮 */
+.navbar.user-info-navbar .user-info-menu.left-links li:first-child {
+    display: none !important;
+}
+
+/* 为内容区域中的行添加额外的留白控制 */
+.main-content .row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/* 添加网站LOGO和名称样式 - 增大PC端尺寸 */
+.site-logo {
+    position: absolute;
+    top: 15px;
+    left: 20px; /* 向右移动 */
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.site-logo img {
+    height: 60px; /* 从40px增加到60px */
+    width: auto;
+    margin-right: 15px; /* 从10px增加到15px */
+}
+
+.site-logo .site-name {
+    font-size: 24px; /* 从18px增加到24px */
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* 添加网站副标题样式 */
+.site-logo .site-domain {
+    font-size: 18px; /* 从14px增加到18px */
+    color: #666;
+    margin-left: 8px; /* 从5px增加到8px */
+}
+
+/* 移除左侧语言切换器，将其移到右侧 */
+.navbar.user-info-navbar .user-info-menu.left-links {
+    margin-left: 0; /* 移除左边距 */
+}
+
+/* 隐藏左侧的语言切换器 */
+.navbar.user-info-navbar .user-info-menu.left-links .language-switcher {
+    display: none !important;
+}
+
+/* 调整右侧菜单样式，添加语言切换器 */
+.navbar.user-info-navbar .user-info-menu.right-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 添加间距 */
+}
+
+/* 在较小屏幕上减少留白并保持原有移动端尺寸 */
+@media (max-width: 768px) {
+    .page-container .main-content {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    /* 移动端显示专门的LOGO区域 - 使用更强制性的规则 */
+    .site-logo-mobile {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1000 !important;
+    }
+    
+    /* 移动端隐藏PC端的LOGO */
+    .site-logo {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    .navbar.user-info-navbar .user-info-menu.left-links {
+        margin-left: 0;
+    }
+    
+    .navbar.user-info-navbar .user-info-menu.right-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* 在非常小的屏幕上进一步减少留白 */
+@media (max-width: 480px) {
+    .page-container .main-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* 确保在最小屏幕上LOGO也能显示 */
+    .site-logo-mobile {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+/* 移动端卡片布局优化 */
+@media (max-width: 767px) {
+    /* 移动端卡片间距优化 */
+    .xe-widget.xe-conversations {
+        margin-bottom: 15px;
+    }
+    
+    /* 移动端卡片内容优化 */
+    .xe-widget.xe-conversations .xe-comment-entry {
+        padding: 10px;
+    }
+    
+    /* 移动端图片大小调整 */
+    .xe-widget.xe-conversations .xe-user-img img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    /* 移动端文字大小调整 */
+    .xe-widget.xe-conversations .xe-user-name {
+        font-size: 13px;
+    }
+    
+    .xe-widget.xe-conversations .overflowClip_2 {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+}
+
+/* 卡片设计优化 */
+.xe-widget.xe-conversations {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.xe-widget.xe-conversations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+.xe-widget.xe-conversations:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 搜索区域美化 */
+.search-section {
+    margin: 30px 0 !important;
+    padding: 0 15px !important;
+}
+
+.search-container {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* 搜索框毛玻璃效果 */
+.search-bar {
+    position: relative !important;
+    margin-bottom: 15px !important;
+}
+
+.search-bar input[type="text"] {
+    width: 100% !important;
+    padding: 15px 60px 15px 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: rgba(74, 144, 226, 0.5) !important;
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 搜索按钮渐变效果 */
+.search-bar button {
+    position: absolute !important;
+    right: 5px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-bar button:hover {
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4) !important;
+}
+
+/* 搜索引擎选项美化 */
+.search-engines {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin-top: 15px !important;
+}
+
+.engine-option {
+    cursor: pointer !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    color: #666 !important;
+    transition: all 0.3s ease !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    position: relative;
+}
+
+.engine-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.engine-option:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.engine-option.active {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3) !important;
+}
+
+/* 毛玻璃效果兼容性支持 */
+@supports not (backdrop-filter: blur(10px)) {
+    .xe-widget.xe-conversations {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .search-bar input[type="text"] {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .engine-option {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+}
+
+/* 网站LOGO交互效果优化 */
+.site-logo a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important;
+}
+
+.site-logo-mobile a:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* 导航栏背景优化 */
+.navbar.user-info-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+}
+
+/* 下拉菜单样式优化 */
+.language-switcher .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+}
+
+.language-switcher .dropdown-menu li a {
+    color: #666;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.language-switcher .dropdown-menu li a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.language-switcher .dropdown-menu li.active a {
+    background: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+}
+
+/* 右侧菜单布局优化 */
+.navbar.user-info-navbar .user-info-menu.right-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+}
+
+/* 语言切换器样式 - 保持文字超链接 */
+.language-switcher .dropdown-toggle {
+    color: #666 !important;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+}
+
+.language-switcher .dropdown-toggle:hover {
+    color: #333 !important;
+    background: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+.language-switcher .dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* 联系我按钮样式 - 保持文字超链接 */
+.navbar.user-info-navbar .user-info-menu.right-links a[href="about.html"] {
+    color: #666 !important;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+}
+
+.navbar.user-info-navbar .user-info-menu.right-links a[href="about.html"]:hover {
+    color: #333 !important;
+    background: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+/* 确保所有导航菜单项对齐 */
+.navbar.user-info-navbar .user-info-menu.right-links li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar.user-info-navbar .user-info-menu.right-links li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .navbar.user-info-navbar .user-info-menu.right-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .language-switcher .dropdown-toggle,
+    .navbar.user-info-navbar .user-info-menu.right-links a[href="about.html"] {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+

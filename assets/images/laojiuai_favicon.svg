@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="24" cy="24" r="22" fill="#2F88FF" stroke="#1E3A8A" stroke-width="2"/>
+  
+  <!-- 机器人头部 -->
+  <rect x="12" y="16" width="24" height="20" rx="3" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+  
+  <!-- 眼睛 -->
+  <circle cx="18" cy="24" r="2" fill="#1E3A8A"/>
+  <circle cx="30" cy="24" r="2" fill="#1E3A8A"/>
+  
+  <!-- 嘴巴 -->
+  <path d="M20 30C20 30 22 32 24 32C26 32 28 30 28 30" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 天线 -->
+  <path d="M24 16V12" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="10" r="1.5" fill="#1E3A8A"/>
+  
+  <!-- 老舅元素 - 胡须 -->
+  <path d="M8 22C8 22 10 24 12 22" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M8 26C8 26 10 28 12 26" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M40 22C40 22 38 24 36 22" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M40 26C40 26 38 28 36 26" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 装饰元素 -->
+  <circle cx="16" cy="18" r="1" fill="#1E3A8A"/>
+  <circle cx="32" cy="18" r="1" fill="#1E3A8A"/>
+</svg> 
