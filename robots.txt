@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://laojiuai.com/sitemap.xml
+
+# 禁止访问的文件和目录
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/fonts/
+Disallow: /.git/
+Disallow: /scripts/
+Disallow: /chromedriver/
+Disallow: /.DS_Store
+
+# 允许访问图片资源
+Allow: /assets/images/ 
