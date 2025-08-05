@@ -1,6 +1,8 @@
 # AI Navigation - 老舅AI导航
 
 一个精心整理的AI工具导航网站，收集了最新的AI工具和资源
+网站地址：laojiuai.com
+
 使用 WebStackPage 的开源导航站进行修改制作 https://github.com/WebStackPage/WebStackPage.github.io
 感谢原作者！
 
